@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Google Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        #map {
+            height: 90%;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+        var map;
+        let wn = {lat: 47.80628, lng:16.22778}
+        let zg = {lat: 45.81310, lng:15.97230}
+        var vienna = {lat: 48.20849,lng: 16.37208};
+        let cf =  {lat: 48.19659,lng: 16.35941}
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: cf, zoom: 14
+            });
+            var pinpoint = new google.maps.Marker({
+                position: cf,
+                map: map
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtjaD-saUZQ47PbxigOg25cvuO6_SuX3M&callback=initMap"
+        async defer></script>
+</body>
+
+</html>
